@@ -9,13 +9,15 @@ const ORIGIN_ROUTER01_ADDRESS = '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a';
 const ORIGIN_ROUTER02_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D';
 const ORIGIN_MULTICALL_ADDRESS = '0x25Eef291876194AeFAd0D60Dff89e268b90754Bb';
 
-// 新地址
-const INIT_CODE_HASH = '79681bc74104e3832134fbdbf4e4da393567d488beea1ff08eaad502457ed2c6';
-const WETH_ADDRESS = '0xa82fF9aFd8f496c3d6ac40E2a0F282E47488CFc9';
-const FACTORY_ADDRESS = '0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8';
-const ROUTER01_ADDRESS = '0x851356ae760d987E095750cCeb3bC6014560891C';
-const ROUTER02_ADDRESS = '0xf5059a5D33d5853360D16C683c16e67980206f36';
+// 当前地址，需要将你自己部署好的v2合约地址填写上去
+const INIT_CODE_HASH = '0x79681bc74104e3832134fbdbf4e4da393567d488beea1ff08eaad502457ed2c6';
+const WETH_ADDRESS = '0x9d8715355b0Dd5E612571f59a0DDa92F2B6A9798';
+const FACTORY_ADDRESS = '0x08c0259b8FF5Ba79AA86Af8Cb8308603b84D6eb0';
+const ROUTER01_ADDRESS = '0xa58F93C2fC0142dBbD111b10BeBA37F5aF771de6';
+const ROUTER02_ADDRESS = '0x9Ed0601a38a9bbC99b62547AC099f389c380A3f9';
 const MULTICALL_ADDRESS = ORIGIN_MULTICALL_ADDRESS;
+
+const YOUR_TOKEN_LIST = 'https://gist.githubusercontent.com/0xharrywang/9445c2fc44655131d678ca2e4fe31ccd/raw/2d40ba4a5f0c592656dc5024335a1937af702a29/token-list.json';
 
 // // 恢复原地址
 // const INIT_CODE_HASH = ORIGIN_INIT_CODE_HASH;
@@ -24,7 +26,6 @@ const MULTICALL_ADDRESS = ORIGIN_MULTICALL_ADDRESS;
 // const ROUTER01_ADDRESS = ORIGIN_ROUTER01_ADDRESS;
 // const ROUTER02_ADDRESS = ORIGIN_ROUTER02_ADDRESS;
 // const MULTICALL_ADDRESS = ORIGIN_MULTICALL_ADDRESS;
-
 
 function init() {
 
@@ -98,6 +99,15 @@ function init() {
       {oldLine : /\[ChainId\.SEPOLIA\].*/, newLine: `[ChainId.SEPOLIA]: '${FACTORY_ADDRESS}'`},
     ]
   );
+
+  // 添加  token list
+  replaceContent(
+    '../src/constants/lists.ts',
+    [
+      {oldLine : /.*\/\/\s*add your list/, newLine: `  '${YOUR_TOKEN_LIST}' // add your list`},
+    ]
+  );
+
 }
 
 function replaceContent(relativePath, replacements) {

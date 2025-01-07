@@ -16,5 +16,6 @@ export const DEFAULT_LIST_OF_LISTS: string[] = [
   'https://app.tryroll.com/tokens.json',
   'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json',
   'https://defiprime.com/defiprime.tokenlist.json',
-  'https://umaproject.org/uma.tokenlist.json'
+  'https://umaproject.org/uma.tokenlist.json',
+  'https://gist.githubusercontent.com/0xharrywang/9445c2fc44655131d678ca2e4fe31ccd/raw/2d40ba4a5f0c592656dc5024335a1937af702a29/token-list.json' // add your list
 ]

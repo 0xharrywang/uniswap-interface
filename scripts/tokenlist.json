@@ -1,0 +1,52 @@
+{
+  "name": "Harry Tokens List",
+  "version": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0
+  },
+  "logoURI": "https://assets-cdn.trustwallet.com/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+  "timestamp": "2025-01-01 00:00:00.000+00:00",
+  "tokens": [
+      {
+          "chainId": 11155111,
+          "address": "0x535b3146b67B719B7AAd0BD4e530D699FE032b47",
+          "name": "AA TOKEN",
+          "symbol": "AA",
+          "decimals": 18,
+          "logoURI": "https://github.com/trustwallet/assets/blob/master/dapps/app.jetton.png"
+      },
+      {
+          "chainId": 11155111,
+          "address": "0x4A295491Cf468C1B133a0E00Ac7968517DC228AD",
+          "name": "BB TOKEN",
+          "symbol": "BB",
+          "decimals": 18,
+          "logoURI": "https://github.com/trustwallet/assets/blob/master/dapps/ddex.io.png"
+      },
+      {
+        "chainId": 11155111,
+        "address": "0xEDBB4E04eD8ABFAC982cBF13099FB4584DC7e771",
+        "name": "CC TOKEN",
+        "symbol": "CC",
+        "decimals": 18,
+        "logoURI": "https://github.com/trustwallet/assets/blob/master/dapps/cryptogs.io.png"
+      },
+      {
+        "chainId": 11155111,
+        "address": "0x03D41E98FE12Db36fA14B0e281713EDb9979bEBb",
+        "name": "DD TOKEN",
+        "symbol": "DD",
+        "decimals": 18,
+        "logoURI": "https://github.com/trustwallet/assets/blob/master/dapps/ethlend.io.png"
+      },
+      {
+      "chainId": 11155111,
+      "address": "0x467be3bF3c54608Ef6274eD676c76ff63a8c80af",
+      "name": "EE TOKEN",
+      "symbol": "EE",
+      "decimals": 18,
+      "logoURI": "https://github.com/trustwallet/assets/blob/master/dapps/gains.trade.png"
+      }
+  ]
+}
