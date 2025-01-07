@@ -84,6 +84,7 @@
   },
   "scripts": {
     "prestart": "rm -r ./node_modules/@uniswap/sdk && cp -r ./forks/@uniswap/sdk ./node_modules/@uniswap/sdk",
+    "prebuild": "rm -r ./node_modules/@uniswap/sdk && cp -r ./forks/@uniswap/sdk ./node_modules/@uniswap/sdk",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test --env=jsdom",
