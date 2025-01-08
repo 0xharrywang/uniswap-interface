@@ -9,7 +9,8 @@ const V1_FACTORY_ADDRESSES: { [chainId in ChainId]: string } = {
   [ChainId.RINKEBY]: '0xf5D915570BC477f9B8D6C0E980aA81757A3AaC36',
   [ChainId.GÖRLI]: '0x6Ce570d02D73d4c384b46135E87f8C592A8c86dA',
   [ChainId.KOVAN]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
-  [ChainId.SEPOLIA]: '0x08c0259b8FF5Ba79AA86Af8Cb8308603b84D6eb0'
+  // 此处留空不部署 V1_Factory, 避免 Failed to fetch multicall chunk
+  [ChainId.SEPOLIA]: ''
 }
 
 const V1_FACTORY_INTERFACE = new Interface(V1_FACTORY_ABI)

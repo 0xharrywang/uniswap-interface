@@ -7,15 +7,14 @@ const ORIGIN_WETH_ADDRESS = '0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9';
 const ORIGIN_FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f';
 const ORIGIN_ROUTER01_ADDRESS = '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a';
 const ORIGIN_ROUTER02_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D';
-const ORIGIN_MULTICALL_ADDRESS = '0x25Eef291876194AeFAd0D60Dff89e268b90754Bb';
+const ORIGIN_MULTICALL_ADDRESS = '0x25Eef291876194AeFAd0D60Dff89e268b90754Bb'; // sepolia 上 Multicall 合约
 
 // 当前地址，需要将你自己部署好的v2合约地址填写上去
 const INIT_CODE_HASH = '0x79681bc74104e3832134fbdbf4e4da393567d488beea1ff08eaad502457ed2c6';
 const WETH_ADDRESS = '0x9d8715355b0Dd5E612571f59a0DDa92F2B6A9798';
 const FACTORY_ADDRESS = '0x08c0259b8FF5Ba79AA86Af8Cb8308603b84D6eb0';
-const ROUTER01_ADDRESS = '0xa58F93C2fC0142dBbD111b10BeBA37F5aF771de6';
 const ROUTER02_ADDRESS = '0x9Ed0601a38a9bbC99b62547AC099f389c380A3f9';
-const MULTICALL_ADDRESS = ORIGIN_MULTICALL_ADDRESS;
+const MULTICALL_ADDRESS = '0x87C51EE3f8F6173EB3A8f3e65BE30aC30E1a6C97';
 
 const YOUR_TOKEN_LIST = 'https://gist.githubusercontent.com/0xharrywang/9445c2fc44655131d678ca2e4fe31ccd/raw/2d40ba4a5f0c592656dc5024335a1937af702a29/token-list.json';
 
@@ -23,7 +22,6 @@ const YOUR_TOKEN_LIST = 'https://gist.githubusercontent.com/0xharrywang/9445c2fc
 // const INIT_CODE_HASH = ORIGIN_INIT_CODE_HASH;
 // const WETH_ADDRESS = ORIGIN_WETH_ADDRESS;
 // const FACTORY_ADDRESS = ORIGIN_FACTORY_ADDRESS;
-// const ROUTER01_ADDRESS = ORIGIN_ROUTER01_ADDRESS;
 // const ROUTER02_ADDRESS = ORIGIN_ROUTER02_ADDRESS;
 // const MULTICALL_ADDRESS = ORIGIN_MULTICALL_ADDRESS;
 
@@ -37,12 +35,11 @@ function init() {
     ]
   );
 
-  // 文件中 BAD_RECIPIENT_ADDRESSES 数组的值修改为 UniswapV2Factory、UniswapV2Router01、UniswapV2Router02
+  // 文件中 BAD_RECIPIENT_ADDRESSES 数组的值修改为 UniswapV2Factory、UniswapV2Router02
   replaceContent(
     '../src/state/swap/hooks.ts',
     [
       {oldLine : /.*\/\/\s*v2 factory/,   newLine: `  '${FACTORY_ADDRESS}', // v2 factory`},
-      {oldLine : /.*\/\/\s*v2 router 01/, newLine: `  '${ROUTER01_ADDRESS}', // v2 router 01`},
       {oldLine : /.*\/\/\s*v2 router 02/, newLine: `  '${ROUTER02_ADDRESS}' // v2 router 02`},
     ]
   );
@@ -87,16 +84,7 @@ function init() {
   replaceContent(
     '../src/constants/multicall/index.ts',
     [
-      // 修改 WETH 地址, 注意是 exports.ChainId.SEPOLIA
       {oldLine : /\[ChainId\.SEPOLIA\].*/, newLine: `[ChainId.SEPOLIA]: '${MULTICALL_ADDRESS}'`},
-    ]
-  );
-
-  replaceContent(
-    '../src/constants/v1/index.ts',
-    [
-      // 修改 WETH 地址, 注意是 exports.ChainId.SEPOLIA
-      {oldLine : /\[ChainId\.SEPOLIA\].*/, newLine: `[ChainId.SEPOLIA]: '${FACTORY_ADDRESS}'`},
     ]
   );
 
